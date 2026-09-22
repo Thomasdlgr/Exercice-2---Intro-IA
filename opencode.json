@@ -1,0 +1,69 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "aristote/qwen-3.6-35b-instruct",
+  "small_model": "aristote/qwen-3.6-35b-instruct",
+  "autoupdate": "notify",
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 8192
+  },
+  "tools": {
+    "task": false,
+    "webfetch": false
+  },
+  "provider": {
+    "aristote": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Aristote",
+      "options": {
+        "baseURL": "https://llm.aristote.education/v1",
+        "apiKey": "sk... À compléter",
+        "timeout": 600000,
+        "chunkTimeout": 60000
+      },
+      "models": {
+        "qwen-3.6-35b-instruct": {
+          "name": "Qwen 3.6 35B Instruct",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          },
+          "variants": {
+            "none": {
+              "disabled": false
+            }
+          }
+        },
+        "gemma-4-31b": {
+          "name": "Gemma 4 31B",
+          "limit": {
+            "context": 131072,
+            "output": 16384
+          }
+        },
+        "gpt-oss-120b": {
+          "name": "GPT OSS 120B",
+          "limit": {
+            "context": 131072,
+            "output": 16384
+          }
+        },
+        "llama-3.1-8b": {
+          "name": "Llama 3.1 8B",
+          "limit": {
+            "context": 131072,
+            "output": 4096
+          }
+        },
+        "llama-3.3-70b": {
+          "name": "Llama 3.3 70B",
+          "limit": {
+            "context": 131072,
+            "output": 16384
+          }
+        }
+      }
+    }
+  }
+}
